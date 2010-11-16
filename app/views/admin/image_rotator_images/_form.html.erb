@@ -1,0 +1,24 @@
+<% form_for [:admin, @image_rotator, @image_rotator_image] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @image_rotator_image,
+    :include_object_name => true
+  } %>
+  
+  <div class='field'>
+    <%= f.label :image -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+      :f => f,
+      :field => :image_id,
+      :image => @image_rotator_image.image,
+      :toggle_image_display => false
+    } %>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.image_rotators.image_rotator_image.delete'),
+                :delete_confirmation => t('shared.admin.delete.message')
+              } %>
+<% end -%>

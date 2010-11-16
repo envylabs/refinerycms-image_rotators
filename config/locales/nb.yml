@@ -1,0 +1,19 @@
+nb:
+  plugins:
+    image_rotators:
+      title: Image Rotators
+  admin:
+    image_rotators:
+      index:
+        create_new: Lag en ny Image Rotator
+        reorder: Endre rekkefølgen på Image Rotators
+        reorder_done: Ferdig å endre rekkefølgen Image Rotators
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Image Rotators enda. Klikk på "Lag en ny Image Rotator" for å legge til din første image rotator.
+      image_rotator:
+        view_live: Vis hvordan denne image rotator ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne image rotator
+        delete: Fjern denne image rotator permanent
+  image_rotators:
+    show:
+      other: Andre Image Rotators

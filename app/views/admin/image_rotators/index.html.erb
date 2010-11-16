@@ -1,0 +1,65 @@
+<div id='actions'>
+  <ul>
+    <li>
+      <%= render :partial => "/shared/admin/search",
+                  :locals => {
+                    :url => admin_image_rotators_url
+                  } %>
+    </li>
+    <li>
+      <%= link_to t('.create_new'), new_admin_image_rotator_url,
+                   :class => "add_icon" %>
+    </li>
+  <% if !searching? and ImageRotator.count > 1 %>
+    <li>
+      <%= link_to t('refinery.reorder', :what => "Image Rotators"),
+                   admin_image_rotators_url,
+                   :id => "reorder_action",
+                   :class => "reorder_icon" %>
+
+      <%= link_to t('refinery.reorder_done', :what => "Image Rotators"),
+                   admin_image_rotators_url,
+                   :id => "reorder_action_done",
+                   :style => "display: none;",
+                   :class => "reorder_icon" %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+<div id='records'>
+  <% if searching? %>
+    <h2><%= t('shared.admin.search.results_for', :query => params[:search]) %></h2>
+    <% if @image_rotators.any? %>
+      <%= will_paginate @image_rotators, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+      <ul>
+        <%= render :partial => "image_rotator",
+                    :collection => @image_rotators %>
+      </ul>
+      <%= will_paginate @image_rotators, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+    <% else %>
+      <p><%= t('shared.admin.search.no_results') %></p>
+    <% end %>
+  <% else %>
+    <% if @image_rotators.any? %>
+      <%= will_paginate @image_rotators,
+                         :previous_label => '&laquo;',
+                         :next_label => '&raquo;' %>
+
+      <%= render :partial => "sortable_list" %>
+
+      <%= will_paginate @image_rotators,
+                         :previous_label => '&laquo;',
+                         :next_label => '&raquo;' %>
+    <% else %>
+      <p>
+        <strong>
+          <%= t('.no_items_yet') %>
+        </strong>
+      </p>
+    <% end %>
+  <% end %>
+</div>
+<%= render :partial => "/shared/admin/make_sortable",
+            :locals => {
+              :tree => false
+            } if !searching? and ImageRotator.count > 1 %>

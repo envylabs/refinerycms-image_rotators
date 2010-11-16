@@ -1,0 +1,23 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    image_rotators:
+      title: Image Rotators
+  admin:
+    image_rotators:
+      index:
+        create_new: Create a new Image Rotator
+        reorder: Reorder Image Rotators
+        reorder_done: Done Reordering Image Rotators
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Image Rotators yet. Click "Create a new Image Rotator" to add your first image rotator.
+      image_rotator:
+        view_live: View this image rotator live <br/><em>(opens in a new window)</em>
+        edit: Edit this image rotator
+        delete: Remove this image rotator forever
+  image_rotators:
+    show:
+      other: Other Image Rotators

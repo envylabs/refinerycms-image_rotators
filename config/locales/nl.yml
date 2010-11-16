@@ -1,0 +1,19 @@
+nl:
+  plugins:
+    image_rotators:
+      title: Image Rotators
+  admin:
+    image_rotators:
+      index:
+        create_new: Maak een nieuwe Image Rotator
+        reorder: Wijzig de volgorde van de Image Rotators
+        reorder_done: Klaar met het wijzingen van de volgorde van de Image Rotators
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Image Rotators. Druk op 'Maak een nieuwe Image Rotator' om de eerste aan te maken.
+      image_rotator:
+        view_live: Bekijk deze image rotator op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze image rotator
+        delete: Verwijder deze image rotator voor eeuwig
+  image_rotators:
+    show:
+      other: Andere Image Rotators
