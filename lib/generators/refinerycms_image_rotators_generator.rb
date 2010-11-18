@@ -8,15 +8,27 @@ class RefinerycmsImageRotatorsGenerator < Rails::Generators::NamedBase
   argument :attributes, :type => :array, :default => ["name:string"]
 
   def generate
-    # seed file
-    template 'db/seeds/image_rotators.rb', Rails.root.join('db/seeds/refinerycms-image_rotators.rb')
-
     migration_template('db/migrate/create_image_rotators.rb', 'db/migrate/create_image_rotators.rb')
+    %w(
+      db/seeds/image_rotators.rb
+      public/images/arrows.png
+      public/images/bullets.png
+      public/images/loading.gif
+      public/javascripts/jquery.image-rotators.js
+      public/javascripts/refinery/admin.js
+      public/stylesheets/image-rotators.css
+    ).each { |path| copy_file path, Rails.root.join(path) }
 
-     puts "------------------------"
-     puts "Now run:"
-     puts "rake db:migrate"
-     puts "------------------------"
+    puts <<-EOS
+------------------------
+Now run:
+rake db:migrate
+------------------------
+Put the following in your layout:
+  stylesheet_link_tag    'image-rotators.css'
+  javascript_include_tag 'jquery.image-rotators.js'
+------------------------
+    EOS
   end
 
   # Implement the required interface for Rails::Generators::Migration.

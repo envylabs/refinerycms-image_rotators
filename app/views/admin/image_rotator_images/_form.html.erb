@@ -3,7 +3,9 @@
     :object => @image_rotator_image,
     :include_object_name => true
   } %>
-  
+
+  <%= f.hidden_field :image_rotator_id, :value => @image_rotator.id %>
+
   <div class='field'>
     <%= f.label :image -%>
     <%= render :partial => "/shared/admin/image_picker", :locals => {
@@ -13,12 +15,19 @@
       :toggle_image_display => false
     } %>
   </div>
-  
+
+  <div class='field'>
+    <%= f.label :url -%>
+    <%= f.text_field :url %>
+  </div>
+
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,
+                :cancel_url => [:edit, :admin, @image_rotator],
+                :delete_url => [:admin, @image_rotator, @image_rotator_image],
                 :continue_editing => false,
                 :delete_title => t('admin.image_rotators.image_rotator_image.delete'),
-                :delete_confirmation => t('shared.admin.delete.message')
+                :delete_confirmation => t('shared.admin.delete.message', :title => @image_rotator_image.image.try(:title))
               } %>
 <% end -%>

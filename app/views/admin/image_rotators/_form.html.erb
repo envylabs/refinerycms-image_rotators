@@ -10,13 +10,13 @@
   </div>
   
   <div class='field'>
-    <%#= f.label :image -%>
-    <%#= render :partial => "/shared/admin/image_picker", :locals => {
-      :f => f,
-      :field => :image_id,
-      :image => @image_rotator.image,
-      :toggle_image_display => false
-    } %>
+    <%= f.label :height, 'Height of all images' -%>
+    <%= f.text_field :height, :value => '240px' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :width, 'Width of all images' -%>
+    <%= f.text_field :width, :value => '725px' -%>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",

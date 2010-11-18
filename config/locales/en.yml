@@ -14,10 +14,21 @@ en:
         reorder_done: Done Reordering Image Rotators
         sorry_no_results: Sorry! There are no results found.
         no_items_yet: There are no Image Rotators yet. Click "Create a new Image Rotator" to add your first image rotator.
+      edit:
+        add_image: Add a new Image
+        reorder: Reorder Images
+        reorder_done: Done Reordering Images
+        no_items_yet: There are no Images yet. Click "Add a new Image" to add your first image.
       image_rotator:
         view_live: View this image rotator live <br/><em>(opens in a new window)</em>
         edit: Edit this image rotator
         delete: Remove this image rotator forever
+      image_rotator_image:
+        delete: Remove this image forever
+    image_rotator_images:
+      image_rotator_image:
+        edit: Edit this image
+        delete: Remove this image forever
   image_rotators:
     show:
       other: Other Image Rotators

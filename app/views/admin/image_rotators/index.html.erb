@@ -10,20 +10,6 @@
       <%= link_to t('.create_new'), new_admin_image_rotator_url,
                    :class => "add_icon" %>
     </li>
-  <% if !searching? and ImageRotator.count > 1 %>
-    <li>
-      <%= link_to t('refinery.reorder', :what => "Image Rotators"),
-                   admin_image_rotators_url,
-                   :id => "reorder_action",
-                   :class => "reorder_icon" %>
-
-      <%= link_to t('refinery.reorder_done', :what => "Image Rotators"),
-                   admin_image_rotators_url,
-                   :id => "reorder_action_done",
-                   :style => "display: none;",
-                   :class => "reorder_icon" %>
-    </li>
-  <% end %>
   </ul>
 </div>
 <div id='records'>
@@ -59,7 +45,3 @@
     <% end %>
   <% end %>
 </div>
-<%= render :partial => "/shared/admin/make_sortable",
-            :locals => {
-              :tree => false
-            } if !searching? and ImageRotator.count > 1 %>

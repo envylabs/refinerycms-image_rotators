@@ -1,9 +1,57 @@
+<%= render :partial => "form" %>
+
 <div id="actions">
   <ul>
     <li>
-      <%= link_to t('.create_new'), new_admin_image_rotator_image_rotator_image_url(@image_rotator),
+      <%= link_to t('.add_image'), new_admin_image_rotator_image_rotator_image_url(@image_rotator),
                    :class => "add_icon" %>
     </li>
+  <% if @image_rotator.images.count > 1 %>
+    <li>
+      <%= link_to t('.reorder', :what => "Image Rotators"),
+                   [:admin, @image_rotator, :image_rotator_images],
+                   :id => "reorder_action",
+                   :class => "reorder_icon" %>
+
+      <%= link_to t('.reorder_done', :what => "Image Rotators"),
+                   [:admin, @image_rotator, :image_rotator_images],
+                   :id => "reorder_action_done",
+                   :style => "display: none;",
+                   :class => "reorder_icon" %>
+    </li>
+  <% end %>
 </div>
 
-<%= render :partial => "form" %>
+<div id='records'>
+  <% if @image_rotator.images.any? %>
+    <%= render :partial => "/admin/image_rotator_images/sortable_list" %>
+    <label>To use this image rotator, embed the following code into the desired page:</label>
+    <pre style="overflow-x: auto;"><code>
+      &lt;div class="image-rotator" style="height:<%= @image_rotator.height %>;width:<%= @image_rotator.width %>;"&gt;
+      <% @image_rotator.images.each do |image| %>
+        &lt;a href="<%= image.url %>"&gt;&lt;img src="<%= image.image.url %>" alt="<%= image.image.title %>" /&gt;
+      <% end %>
+      &lt;/div&gt;
+    </code></pre>
+  <% else %>
+    <p>
+      <strong>
+        <%= t('.no_items_yet') %>
+      </strong>
+    </p>
+  <% end %>
+</div>
+<% if @image_rotator.images.count > 1 %>
+  <% content_for :head_after_javascript_libraries,
+                 javascript_include_tag('refinery/serializelist.js') -%>
+  <% content_for :head do %>
+    <script type='text/javascript'>
+      $(document).ready(function(){
+        list_reorder.update_url     = '<%= update_positions_admin_image_rotator_image_rotator_images_path(@image_rotator) %>';
+        list_reorder.sortable_list  = $('#sortable_list');
+        list_reorder.tree           = false;
+        list_reorder.init();
+      });
+    </script>
+  <% end %>
+<% end %>

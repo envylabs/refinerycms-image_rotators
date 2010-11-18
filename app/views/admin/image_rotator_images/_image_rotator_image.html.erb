@@ -1,0 +1,15 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(image_rotator_image) -%>">
+  <span class='title'>
+    <%= image_fu image_rotator_image.image, '225x255>', :class => "brown_border" %>
+    <span class="preview">&nbsp;</span>
+  </span>
+  <span class='actions'>
+    <%= link_to refinery_icon_tag("application_edit.png"), [:edit, :admin, @image_rotator, image_rotator_image],
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), admin_image_rotator_image_rotator_image_path(image_rotator_image.image_rotator, image_rotator_image),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :'data-confirm' => t('shared.admin.delete.message', :title => image_rotator_image.image.title),
+        :'data-method' => :delete %>
+  </span>
+</li>

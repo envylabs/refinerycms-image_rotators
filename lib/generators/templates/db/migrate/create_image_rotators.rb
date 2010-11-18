@@ -3,6 +3,8 @@ class CreateImageRotators < ActiveRecord::Migration
   def self.up
     create_table :image_rotators do |t|
       t.string :title
+      t.string :height
+      t.string :width
 
       t.timestamps
     end
