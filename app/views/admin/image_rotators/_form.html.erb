@@ -11,12 +11,12 @@
   
   <div class='field'>
     <%= f.label :height, 'Height of all images' -%>
-    <%= f.text_field :height, :value => '240px' -%>
+    <%= f.text_field :height -%> (ex: 240px)
   </div>
   
   <div class='field'>
     <%= f.label :width, 'Width of all images' -%>
-    <%= f.text_field :width, :value => '725px' -%>
+    <%= f.text_field :width -%> (ex: 725px)
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",
