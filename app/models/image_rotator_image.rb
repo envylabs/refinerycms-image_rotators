@@ -1,5 +1,5 @@
 class ImageRotatorImage < ActiveRecord::Base
-  
+
   belongs_to :image_rotator
   belongs_to :image
 

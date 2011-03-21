@@ -1,6 +1,6 @@
 class ImageRotator < ActiveRecord::Base
 
-  has_many :images, :class_name => 'ImageRotatorImage'
+  has_many :images, :class_name => 'ImageRotatorImage', :dependent => :destroy
 
   validates :title, :presence => true
   validates :height, :presence => true

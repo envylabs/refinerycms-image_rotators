@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
     'app/controllers/admin/image_rotator_images_controller.rb',
     'app/controllers/admin/image_rotators_controller.rb',
     'app/models',
+    'app/models/image.rb',
     'app/models/image_rotator.rb',
     'app/models/image_rotator_image.rb',
     'app/views',
