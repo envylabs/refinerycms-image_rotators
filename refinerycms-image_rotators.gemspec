@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-image_rotators}
-  s.version           = %q{0.1.3}
+  s.version           = %q{0.2.0}
   s.description       = %q{An open source Ruby on Rails image rotator engine designed for integration with RefineryCMS.}
-  s.date              = %q{2011-03-21}
+  s.date              = %q{2011-04-07}
   s.summary           = %q{Ruby on Rails image rotator engine for RefineryCMS.}
   s.email             = %q{jacob@envylabs.com}
   s.homepage          = %q{http://envylabs.com}
@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
     'app/controllers/admin/image_rotator_images_controller.rb',
     'app/controllers/admin/image_rotators_controller.rb',
     'app/models',
-    'app/models/image.rb',
     'app/models/image_rotator.rb',
     'app/models/image_rotator_image.rb',
     'app/views',
