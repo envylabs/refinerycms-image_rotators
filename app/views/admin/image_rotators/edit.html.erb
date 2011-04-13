@@ -29,7 +29,7 @@
     <pre style="overflow-x: auto;"><code>
       &lt;div class="image-rotator" style="height:<%= @image_rotator.height %>;width:<%= @image_rotator.width %>;"&gt;
       <% @image_rotator.images.each do |image| %>
-        &lt;a href="<%= image.url %>"&gt;&lt;img src="<%= image.image.url %>" alt="<%= image.image.title %>" /&gt;&lt;/a&gt;
+        &lt;a href="<%= image.url %>"&gt;&lt;img src="<%= image.image.url %>" alt="<%= image.image.title %>" title="<%= image.caption %>" /&gt;&lt;/a&gt;
       <% end %>
       &lt;/div&gt;
     </code></pre>

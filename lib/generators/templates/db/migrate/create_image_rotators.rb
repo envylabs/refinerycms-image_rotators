@@ -17,6 +17,7 @@ class CreateImageRotators < ActiveRecord::Migration
       t.integer :image_rotator_id
       t.integer :image_id
       t.text    :url
+      t.text    :caption
       t.integer :position
 
       t.timestamps
