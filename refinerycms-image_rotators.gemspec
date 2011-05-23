@@ -2,12 +2,14 @@ Gem::Specification.new do |s|
   s.name              = %q{refinerycms-image_rotators}
   s.version           = %q{0.3.0}
   s.description       = %q{An open source Ruby on Rails image rotator engine designed for integration with RefineryCMS.}
-  s.date              = %q{2011-04-13}
+  s.date              = %q{2011-05-23}
   s.summary           = %q{Ruby on Rails image rotator engine for RefineryCMS.}
   s.email             = %q{jacob@envylabs.com}
   s.homepage          = %q{http://envylabs.com}
   s.authors           = %w(Jacob\ Swanner)
   s.require_paths     = %w(lib)
+
+  s.add_dependency    'acts_as_list', '~> 0.1.2'
 
   s.files             = [
     'app',

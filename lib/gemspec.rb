@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.authors           = %w(Jacob\\ Swanner)
   s.require_paths     = %w(lib)
 
+  s.add_dependency    'acts_as_list', '~> 0.1.2'
+
   s.files             = [
     '#{files.join("',\n    '")}'
   ]

@@ -1,3 +1,5 @@
+require 'acts_as_list'
+
 class ImageRotatorImage < ActiveRecord::Base
 
   belongs_to :image_rotator
