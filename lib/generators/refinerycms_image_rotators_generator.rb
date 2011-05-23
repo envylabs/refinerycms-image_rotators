@@ -15,7 +15,6 @@ class RefinerycmsImageRotatorsGenerator < Rails::Generators::NamedBase
       public/images/bullets.png
       public/images/loading.gif
       public/javascripts/jquery.image-rotators.js
-      public/javascripts/refinery/admin.js
       public/stylesheets/image-rotators.css
     ).each { |path| copy_file path, Rails.root.join(path) }
 

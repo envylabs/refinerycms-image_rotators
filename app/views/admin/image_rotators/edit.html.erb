@@ -42,9 +42,9 @@
   <% end %>
 </div>
 <% if @image_rotator.images.count > 1 %>
-  <% content_for :head_after_javascript_libraries,
-                 javascript_include_tag('refinery/serializelist.js') -%>
-  <% content_for :head do %>
+  <% content_for :javascripts do %>
+    <%= javascript_include_tag 'refinery/serializelist.js' %>
+    <%= javascript_include_tag 'refinery/nestedsortables.js' %>
     <script type='text/javascript'>
       $(document).ready(function(){
         list_reorder.update_url     = '<%= update_positions_admin_image_rotator_image_rotator_images_path(@image_rotator) %>';

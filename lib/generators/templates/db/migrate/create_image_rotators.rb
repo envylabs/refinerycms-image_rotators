@@ -11,7 +11,7 @@ class CreateImageRotators < ActiveRecord::Migration
 
     add_index :image_rotators, :id
 
-    load(Rails.root.join('db', 'seeds', 'refinerycms-image_rotators.rb'))
+    load(Rails.root.join('db', 'seeds', 'image_rotators.rb'))
 
     create_table :image_rotator_images do |t|
       t.integer :image_rotator_id
