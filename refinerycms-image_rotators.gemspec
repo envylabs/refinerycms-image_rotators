@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-image_rotators}
-  s.version           = %q{0.3.1}
+  s.version           = %q{0.4.0}
   s.description       = %q{An open source Ruby on Rails image rotator engine designed for integration with RefineryCMS.}
   s.date              = %q{2011-05-23}
   s.summary           = %q{Ruby on Rails image rotator engine for RefineryCMS.}
@@ -58,8 +58,6 @@ Gem::Specification.new do |s|
     'lib/generators/templates/public/images/loading.gif',
     'lib/generators/templates/public/javascripts',
     'lib/generators/templates/public/javascripts/jquery.image-rotators.js',
-    'lib/generators/templates/public/javascripts/refinery',
-    'lib/generators/templates/public/javascripts/refinery/admin.js',
     'lib/generators/templates/public/stylesheets',
     'lib/generators/templates/public/stylesheets/image-rotators.css',
     'lib/image_rotators.rb',
